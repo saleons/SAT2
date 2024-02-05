@@ -5,8 +5,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<<<<<<< HEAD
     //refresco de pagina
     <meta http-equiv="refresh" content="60">
+=======
+    <!---REFRESCO PAGINA--->
+    <meta http-equiv="refresh" content="60">
+
+>>>>>>> 820393d (one1)
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
@@ -75,7 +81,7 @@
   }
 
   .container1 {
-  max-height: 150px;
+  max-height: 120px;
   overflow: auto;
 
 }
@@ -166,7 +172,7 @@ span {
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/images/LOGO.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                <img src="/images/Logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 SISTEMA DE ALERTA TEMPRANA
                 <img src="/images/RepCol.png" alt="" width="160" height="30" class="d-inline-block align-text-top">
                 <img src="/images/UNGRD.png" alt="" width="100" height="30" class="d-inline-block align-text-top">
@@ -389,7 +395,11 @@ span {
          .addTo(feature_group_46b3488c1943b112ae03fdd7afdaad2b).on('click', onClick);
          function onClick(e) {
          //CUANDO SE LE DA CLICK ENVIA EL CORREO A CONSYLTA
-         document.getElementById('miInput').value = coordenada.nombre;
+         var clickedMarker = e.target;
+         var popupContent = clickedMarker.getPopup().getContent();
+         document.getElementById('miInput').value = producto1[i].nombre ;
+         var nombre = popupContent.match(/<b>Usuario:<\/b> (.+)<br>/)[1];
+         document.getElementById('miInput').value = nombre;
          }
          }
 //__________________________________________________________
@@ -402,8 +412,13 @@ span {
         // Crear el contenido del popup
         var contenidoPopup2 =
         "<b>Alerta:</b> " + coordenada2.nombre + "<br>" +
+<<<<<<< HEAD
         "<b>Alerta:</b> " + coordenada2.fechaActualizacion + "<br>" +
                              "<b>Fecha:</b> " + coordenada2.descripcion;
+=======
+        "<b>Fecha:</b> " + coordenada2.fechaActualizacion + "<br>" +
+                             "<b>Evento:</b> " + coordenada2.descripcion;
+>>>>>>> 820393d (one1)
 
 
         //estilo de marca
@@ -411,17 +426,26 @@ span {
         iconUrl: '/images/megaphone.png',
         iconSize: [30, 30],
         iconAnchor: [10, 40],
+<<<<<<< HEAD
         popupAnchor: [-3, -76],
+=======
+        popupAnchor: [-3, -20],
+>>>>>>> 820393d (one1)
 
         });
 
         // Agregar el marcador con el popup al mapa y al grupo de puntos
         var marker2=L.marker([parseFloat(coordenada2.estado), parseFloat(coordenada2.fechaModificacion)], {icon: myIcon2} )
          .bindPopup(contenidoPopup2)
+<<<<<<< HEAD
          .addTo(feature_group_46b3488c1943b112ae03fdd7afdaad2b).on('click', onClick);
          function onClick(e) {
          document.getElementById('miInput').value = coordenada2.nombre;
          }
+=======
+         .addTo(feature_group_46b3488c1943b112ae03fdd7afdaad2b);
+
+>>>>>>> 820393d (one1)
          }
 //__________________________________________________________
 
@@ -442,7 +466,11 @@ span {
         iconUrl: '/images/a.png',
         iconSize: [15, 15],
         iconAnchor: [-1, 15],
+<<<<<<< HEAD
         popupAnchor: [-3, -76],
+=======
+        popupAnchor: [-3, -20],
+>>>>>>> 820393d (one1)
 
         });
 

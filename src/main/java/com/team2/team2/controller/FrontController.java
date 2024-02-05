@@ -45,7 +45,7 @@ public class FrontController {
     MyModelObject mymodelobject = new MyModelObject();
 
 
-    //_______________________________________________METODOS__________________________________________________________
+    //_______________________________________________METODOS CARGA INICIAL_________________________________________________________
 
     @GetMapping("/")
     //@ResponseBody para indicar que el resultado del método lo vuelque en el cuerpo de la respuesta.

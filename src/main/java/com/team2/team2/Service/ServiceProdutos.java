@@ -104,25 +104,25 @@ public class ServiceProdutos implements InterfazServiceProdutos {
         List<Producto> LitHour = new ArrayList<>();
         for (Producto producto : listdeproducto) {
 
+
+            //LE QUITO UN DIA
             LocalDateTime now = LocalDateTime.now();
             int hoy = now.getDayOfYear();
             int ayer =hoy-1;
-            System.out.println("w+");
-            System.out.println(hoy);
-            System.out.println(producto.getfechaActualizacion());
-            System.out.println(producto.getfechageneraion());
 
             if (producto.getfechaActualizacion() != null) {
                 LocalDateTime localDateTime = producto.getfechaActualizacion();
                 int diaalert = localDateTime.getDayOfYear();
-                System.out.println("w+2");
-                System.out.println(diaalert);
+
                 if (diaalert >= ayer) {
-                    System.out.println("entra2");
-                    LitHour = new ArrayList<>();
+                    System.out.println("-----------------+------------------");
+                    System.out.println(diaalert);
+                    System.out.println(ayer);
+
+
                     LitHour.add(producto);
                 }
-                System.out.println("-----------------------------------");
+
                 }
             else {
                 LocalDateTime localDateTime1 = producto.getfechageneraion();
